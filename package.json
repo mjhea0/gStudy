@@ -1,0 +1,20 @@
+{
+  "name": "gStudy",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/server/bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.2.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.5.0",
+    "knex": "^0.11.5",
+    "moment": "^2.13.0",
+    "morgan": "^1.7.0",
+    "pg": "^4.5.6"
+  }
+}

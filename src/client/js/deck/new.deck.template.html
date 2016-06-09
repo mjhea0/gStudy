@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Deck Info</h1>
+    <br><br>
+    <div>
+      <form class="form" ng-submit="submitDeck(deck, cards)">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Name</label>
+            <input ng-model="deck.name" class="form-control" type="text" required>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input ng-model="deck.description" class="form-control" type="text" required>
+          </div>
+          <button type="submit" class="btn btn-success">Create Deck</button>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <a class="btn btn-default btn-md " ng-click="addCard()" role="button">Add Card</a>
+          <more-cards index="key" cards="cards" ng-repeat="(key, card) in cards track by key"></more-cards><br>
+        </div>
+      </form>
+    <div>
+  </div>
+</div>

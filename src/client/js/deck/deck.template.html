@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="thin-border-right col-md-9">
+    <div class="list-group">
+      <a href="/#/new" class="list-group-item list-group-item-info">
+        <h3 class="new-deck-flash">
+          <span class="glyphicon glyphicon-plus-sign"></span>
+          <span>Create a New Deck to Study</span>
+        </h3>
+      </a>
+    </div>
+    <div>
+      <h3>My Decks</h3>
+      <hr>
+      <div class="col-md-4 text-center" ng-repeat="deck in decks">
+        <div>
+          <p><img src="http://placehold.it/250x200"></p>
+          <h4>{{deck.name}}</h4>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h3>Notifications</h3>
+  </div>
+</div>
