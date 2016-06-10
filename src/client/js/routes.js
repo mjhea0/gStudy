@@ -17,6 +17,12 @@
       restricted: true,
       preventLoggedIn: false
     })
+    .when('/deck/:id', {
+      templateUrl: 'js/deck/deck.template.html',
+      controller: 'deckController',
+      restricted: true,
+      preventLoggedIn: false
+    })
     .when('/new-deck', {
       templateUrl: 'js/deck/deck.new.template.html',
       controller: 'newDeckController',

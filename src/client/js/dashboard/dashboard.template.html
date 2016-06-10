@@ -13,7 +13,7 @@
       <hr>
       <div class="col-md-4 text-center" ng-repeat="deck in decks">
         <div>
-          <p><img src="http://placehold.it/250x200"></p>
+          <p><a href="/#/deck/{{deck.id}}"><img src="http://placehold.it/250x200"></p></a>
           <h4>{{deck.name}}</h4>
           <p class="date">Last updated - {{deck.updated_at | date:'longDate'}}</p>
           <br><br>

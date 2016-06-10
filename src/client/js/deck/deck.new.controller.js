@@ -4,9 +4,9 @@
   angular.module('studyApp')
   .controller('newDeckController', newDeckController);
 
-  newDeckController.$inject = ['$scope', 'newDeckService'];
+  newDeckController.$inject = ['$scope', 'deckService'];
 
-  function newDeckController($scope, newDeckService) {
+  function newDeckController($scope, deckService) {
     $scope.deck = {};
     $scope.cards = [];
     $scope.addCard = function(){
@@ -14,7 +14,7 @@
     };
     $scope.submitDeck = function(deck, cards) {
       deck.cards = cards;
-      newDeckService.newDeck(deck)
+      deckService.newDeck(deck)
       .then(function(data) {
         $scope.deck = {};
         $scope.cards = [];

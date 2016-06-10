@@ -18,6 +18,23 @@ router.get('/', authHelpers.ensureAuthenticated,
   });
 });
 
+// get single deck
+router.get('/:id', authHelpers.ensureAuthenticated,
+  function(req, res, next) {
+  knex.select('*')
+  .from('decks')
+  .where('id', parseInt(req.params.id))
+  .then(function(data) {
+    return res.status(200).json({
+      status: 'success',
+      data: data
+    });
+  })
+  .catch(function(err) {
+    return next(err);
+  });
+});
+
 // add new deck
 router.post('/', authHelpers.ensureAuthenticated,
   function(req, res, next) {
