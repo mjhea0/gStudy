@@ -3,16 +3,16 @@
   'use strict';
 
   angular.module('studyApp')
-  .controller('deckController', deckController);
+  .controller('dashboardController', dashboardController);
 
-  deckController.$inject = ['$scope', 'deckService', 'authService'];
+  dashboardController.$inject = ['$scope', 'dashboardService', 'authService'];
 
-  function deckController($scope, deckService, authService) {
+  function dashboardController($scope, dashboardService, authService) {
     $scope.decks = [];
     $scope.recommendedQuiz = [];
     $scope.userId = authService.getUserID();
     // get all decks
-    deckService.getDecks($scope.userId)
+    dashboardService.getDecks($scope.userId)
     .then(function(results) {
       var allDecks = results.data.data;
       if(allDecks.length) {

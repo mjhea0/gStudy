@@ -14,7 +14,7 @@
       authService.register($scope.user)
         .then(function(user) {
           authService.setUserInfo(user);
-          $location.path('/decks');
+          $location.path('/');
           $rootScope.currentUser = authService.getUserID();
         })
         .catch(function(err) {

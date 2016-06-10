@@ -14,7 +14,7 @@
       .then(function(user) {
         user.id = user.data.data.user;
         authService.setUserInfo(user);
-        $location.path('/decks');
+        $location.path('/');
         $rootScope.currentUser = authService.getUserID();
       })
       .catch(function(err) {

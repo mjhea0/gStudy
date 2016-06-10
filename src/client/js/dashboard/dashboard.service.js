@@ -3,11 +3,11 @@
   'use strict';
 
   angular.module('studyApp')
-  .service('deckService', deckService);
+  .service('dashboardService', dashboardService);
 
-  deckService.$inject = ['$http', '$window'];
+  dashboardService.$inject = ['$http', '$window'];
 
-  function deckService($http, $window) {
+  function dashboardService($http, $window) {
     var currentID = {};
     return {
       getDecks: function() {

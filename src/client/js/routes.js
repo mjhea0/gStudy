@@ -11,9 +11,9 @@
 
   function appConfig($routeProvider, $httpProvider) {
     $routeProvider
-    .when('/decks', {
-      templateUrl: 'js/deck/deck.template.html',
-      controller: 'deckController',
+    .when('/', {
+      templateUrl: 'js/dashboard/dashboard.template.html',
+      controller: 'dashboardController',
       restricted: true,
       preventLoggedIn: false
     })
