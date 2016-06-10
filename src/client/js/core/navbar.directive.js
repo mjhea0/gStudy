@@ -25,15 +25,26 @@
               <ul class="nav navbar-nav">
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="/#/login">Login</a></li>
-                <li><a href="/#/register">Register</a></li>
-                <li><a href="/#/logout">Logout</a></li>
+                <li><a ng-show="!isUserLoggedIn" href="/#/login">Login</a></li>
+                <li><a ng-show="!isUserLoggedIn" href="/#/register">Register</a></li>
+                <li><a ng-show="isUserLoggedIn" href="/#/logout">Logout</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!--/.container-fluid -->
         </nav>
-        <br>`
+        <br>`,
+      controller: ['$scope', '$window', function($scope, $window) {
+        function testUserLogin() {
+          if($window.localStorage.getItem('token')) {
+            $scope.isUserLoggedIn = true;
+          } else {
+            $scope.isUserLoggedIn = false;
+          }
+        }
+        $scope.$watch(testUserLogin)
+      }],
     }
+
     return directive;
   }
 

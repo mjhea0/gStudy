@@ -16,3 +16,8 @@ body {
 .thin-border-right {
   border-right: 1px solid #eee;
 }
+
+.date {
+  font-style: italic;
+  color: #31708f
+}
