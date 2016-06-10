@@ -9,7 +9,6 @@
 
   function dashboardController($scope, deckService, authService) {
     $scope.decks = [];
-    $scope.recommendedQuiz = [];
     $scope.userId = authService.getUserID();
     // get all decks
     deckService.getDecks($scope.userId)
@@ -20,7 +19,11 @@
         var userDecks = allDecks.filter(function(el){
           return parseInt(el.user_id) === parseInt($scope.userId);
         });
-        $scope.decks = userDecks;
+        if(userDecks.length) {
+          $scope.decks = userDecks;
+        } else {
+          $scope.message = 'You do not have any decks!';
+        }
       }
     });
   }

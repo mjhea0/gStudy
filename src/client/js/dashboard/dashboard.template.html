@@ -11,11 +11,12 @@
     <div>
       <h3>My Decks</h3>
       <hr>
+      <p ng-if="message" class="italic-font">{{message}}</p>
       <div class="col-md-4 text-center" ng-repeat="deck in decks">
         <div>
           <p><a href="/#/deck/{{deck.id}}"><img src="http://placehold.it/250x200"></p></a>
-          <h4>{{deck.name}}</h4>
-          <p class="date">Last updated - {{deck.updated_at | date:'longDate'}}</p>
+          <h4><a href="/#/deck/{{deck.id}}">{{deck.name}}</a></h4>
+          <p class="italic-font">Last updated - {{deck.updated_at | date:'longDate'}}</p>
           <br><br>
         </div>
       </div>
