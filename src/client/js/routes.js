@@ -17,8 +17,8 @@
       restricted: true,
       preventLoggedIn: false
     })
-    .when('/new', {
-      templateUrl: 'js/deck/new.deck.template.html',
+    .when('/new-deck', {
+      templateUrl: 'js/deck/deck.new.template.html',
       controller: 'newDeckController',
       restricted: true,
       preventLoggedIn: false
